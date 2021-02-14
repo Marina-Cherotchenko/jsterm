@@ -1,0 +1,22 @@
+import random
+
+random.seed(1) 
+
+def rand(a, b):
+    rnumber = random.uniform(a, b)
+    return  rnumber 
+
+def in_circle(a, origin = [0,0]):
+        import math
+        l = math.sqrt((a[0])**2 + (a[1])**2)
+        return (l<1) 
+    
+inside = []
+r = 50
+for i in range(r):
+    x = [0,0]
+    x[0] = rand(-1, 1)
+    x[1] = rand(-1, 1)
+    inside.append(in_circle(x, origin = [0, 0]))
+    i += 1
+print(sum(inside)/r)
